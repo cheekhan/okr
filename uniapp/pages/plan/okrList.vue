@@ -1,6 +1,6 @@
 <template>
 	<view>
-		
+		<text>OKR列表页</text>
 	</view>
 </template>
 
@@ -8,11 +8,11 @@
 	export default {
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
-			
+
 		}
 	}
 </script>
