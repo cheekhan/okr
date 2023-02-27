@@ -1,12 +1,16 @@
 from django.http import JsonResponse
+from okr.models.index import PlanDto
+from .response import error_response, success_response
+from django.views.decorators.http import require_GET, require_POST
 
 
+# @require_POST()
 def plan_add(request):
     '''
     添加计划
     '''
     result = {}
-    return JsonResponse(result)
+    return JsonResponse(request)
 
 
 def plan_update(request):

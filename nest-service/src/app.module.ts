@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-// import { ConfigService, ConfigModule } from '@nestjs/config';
+// 导入所有controller
 import { AppController } from './app.controller';
+// 导入所有provider
 import { AppService } from './app.service';
+// 导入所有子模块
 import { PlanModule } from './plan/plan.module';
-
-// import { resolve } from 'path';
+//导入所有的实体
+import { PlanEntity } from './plan/plan.entity';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { PlanModule } from './plan/plan.module';
       username: 'root',
       password: '123456',
       database: 'okr',
+      entities: [PlanEntity],
+      synchronize: true,
     }),
     PlanModule,
   ],
