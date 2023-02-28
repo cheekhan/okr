@@ -5,9 +5,10 @@ import { AppController } from './app.controller';
 // 导入所有provider
 import { AppService } from './app.service';
 // 导入所有子模块
-import { PlanModule } from './plan/plan.module';
-//导入所有的实体
-import { PlanEntity } from './plan/plan.entity';
+import { OkrModule } from './okr/okr.module';
+
+//导入所有的实体,进行数据库实体注册
+import { PlanEntiry, OkrEntity, TomatoEntity, LogEntity } from './okr/entities';
 
 @Module({
   imports: [
@@ -18,10 +19,10 @@ import { PlanEntity } from './plan/plan.entity';
       username: 'root',
       password: '123456',
       database: 'okr',
-      entities: [PlanEntity],
+      entities: [PlanEntiry, OkrEntity, TomatoEntity, LogEntity],
       synchronize: true,
     }),
-    PlanModule,
+    OkrModule,
   ],
   controllers: [AppController],
   providers: [AppService],
