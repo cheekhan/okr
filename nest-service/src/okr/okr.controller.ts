@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UsePipes } from '@nestjs/common';
+import { Controller, Post, Body, UsePipes, Get, Param } from '@nestjs/common';
 import {
   LogService,
   OkrService,
@@ -39,5 +39,17 @@ export class OkrController {
   @UsePipes(new PlanSelectPipe())
   planSelect(@Body() body) {
     return this.planService.select(body);
+  }
+
+  // 计划 - 放弃
+  @Get('plan/quit/:id')
+  planQuit(@Param('id') id) {
+    return this.planService.quit(id);
+  }
+
+  //  OKR - 创建
+  @Post('okr/create')
+  okrCreate() {
+    return '';
   }
 }
