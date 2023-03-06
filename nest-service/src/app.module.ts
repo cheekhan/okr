@@ -12,15 +12,24 @@ import { PlanEntiry, OkrEntity, TomatoEntity, LogEntity } from './okr/entities';
 
 @Module({
   imports: [
+    // 开发环境连接mysql
+    // TypeOrmModule.forRoot({
+    //   type: 'mysql',
+    //   port: 3306,
+    //   host: 'localhost',
+    //   username: 'root',
+    //   password: '123456',
+    //   database: 'okr',
+    //   entities: [PlanEntiry, OkrEntity, TomatoEntity, LogEntity],
+    //   synchronize: true,
+    // }),
+    // 本地链接sqlite
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      port: 3306,
-      host: 'localhost',
-      username: 'root',
-      password: '123456',
-      database: 'okr',
+      type: 'sqlite',
+      database: 'okr.sqlite3',
       entities: [PlanEntiry, OkrEntity, TomatoEntity, LogEntity],
       synchronize: true,
+      autoLoadEntities: true,
     }),
     OkrModule,
   ],

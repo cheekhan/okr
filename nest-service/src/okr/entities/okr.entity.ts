@@ -1,5 +1,4 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { okrStatus } from '../dto/okr.dto';
 
 @Entity()
 export class OkrEntity {
@@ -13,12 +12,14 @@ export class OkrEntity {
   content: string; //描述，长文本
   @Column()
   planId: string; //所属计划的uuid
-  @Column({
-    type: 'enum',
-    enum: okrStatus,
-    default: okrStatus.WORKING,
-  })
-  status: okrStatus; //int类型，代表状态，0-放弃，1-进行中，2-完成
+  // @Column({
+  //   type: 'enum',
+  //   enum: okrStatus,
+  //   default: okrStatus.WORKING,
+  // })
+  // status: okrStatus; //int类型，代表状态，0-放弃，1-进行中，2-完成
+  @Column({ type: 'int', default: 1 })
+  status: number; //int类型，代表状态，0-放弃，1-进行中，2-完成
 
   @Column('datetime')
   startDate: string; // 开始时间戳
