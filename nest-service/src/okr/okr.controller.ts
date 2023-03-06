@@ -5,11 +5,7 @@ import {
   PlanService,
   TomatoService,
 } from './okr.service';
-import {
-  PlanCreatePipe,
-  PlanUpdatePipe,
-  PlanSelectPipe,
-} from './pipes/plan.pipe';
+import { PlanCreatePipe, PlanUpdatePipe } from './pipes/plan.pipe';
 
 @Controller('okr')
 export class OkrController {
@@ -36,7 +32,6 @@ export class OkrController {
 
   //   计划 - 查询
   @Post('plan/select')
-  @UsePipes(new PlanSelectPipe())
   planSelect(@Body() body) {
     return this.planService.select(body);
   }
@@ -49,7 +44,61 @@ export class OkrController {
 
   //  OKR - 创建
   @Post('okr/create')
-  okrCreate() {
-    return '';
+  okrCreate(@Body() body) {
+    return this.okrService.create(body);
+  }
+
+  //  OKR - 更新
+  @Post('okr/update')
+  okrUpdate(@Body() body) {
+    return this.okrService.update(body);
+  }
+
+  //  OKR 延期
+  @Get('okr/delay/:id')
+  okrDelay(@Param('id') id) {
+    return this.okrService.delay(id);
+  }
+
+  //  OKR 放弃
+  @Get('okr/quit/:id')
+  okrQuit(@Param('id') id) {
+    return this.okrService.quit(id);
+  }
+
+  //  查询OKR
+  @Post('okr/select')
+  okrSelect(@Body() body) {
+    return this.okrService.select(body);
+  }
+
+  //  tomato - 创建
+  @Post('tomato/create')
+  tomatoCreate(@Body() body) {
+    return this.tomatoService.create(body);
+  }
+
+  //  tomato - 修改
+  @Post('tomato/update')
+  tomatoUpdate(@Body() body) {
+    return this.tomatoService.update(body);
+  }
+
+  //  tomato - 修改状态：完成 or 放弃
+  @Post('tomato/done')
+  tomatoDone(@Body() body) {
+    return this.tomatoService.done(body);
+  }
+
+  // tomato - 查询
+  @Post('tomato/select')
+  tomatoSelect(@Body() body) {
+    return this.tomatoService.select(body);
+  }
+
+  //  log - 创建
+  @Post('log/create')
+  logCreate(@Body() body) {
+    return this.logService.create(body);
   }
 }

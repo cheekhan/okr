@@ -40,13 +40,3 @@ export class PlanUpdatePipe implements PipeTransform {
     return value;
   }
 }
-
-// 查询时：增加分页信息
-@Injectable()
-export class PlanSelectPipe implements PipeTransform {
-  transform(value, metadata: ArgumentMetadata): PlanDto {
-    if (!value.pageNum) value.pageNum = 0;
-    if (!value.pageSize) value.pageSize = 10;
-    return value;
-  }
-}
