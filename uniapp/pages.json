@@ -17,53 +17,61 @@
 		{
 			"path": "pages/tomato/tomato",
 			"style": {
+				"navigationBarTitleText": "任务列表",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/tomato/tomatoTime",
+			"style": {
 				"navigationBarTitleText": "番茄钟",
 				"enablePullDownRefresh": false
 			}
 
+		},
+		{
+			"path": "pages/plan/okrList",
+			"style": {
+				"navigationBarTitleText": "OKR",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/plan/alterPlan",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/plan/alterOkr",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/plan/alterTomato",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/plan/tomatoList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/plan/okrList",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "OKR",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/plan/alterPlan",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/plan/alterOkr",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/plan/tomatoList",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "番茄工作法",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#ffffff"
 	},
 	"uniIdRouter": {},
 	"tabBar": {
