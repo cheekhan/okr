@@ -8,7 +8,6 @@ import { PlanEntiry } from './entities/plan.entiry';
 import { OkrEntity } from './entities/okr.entity';
 //tomato
 import { TomatoEntity, LogEntity } from './entities/tomato.entity';
-import { tomatoStatus } from './dto/tomato.dto';
 
 // ----------------   计划    -----------------------
 @Injectable()
